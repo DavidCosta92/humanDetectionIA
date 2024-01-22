@@ -1,0 +1,10 @@
+train: /content/data/images/train
+val: /content/data/images/validation
+test: # test images (optional)
+
+# Classes
+names:
+  0: Persona
+
+# Download script/URL (optional)
+download: https://ultralytics.com/assets/coco128.zip
