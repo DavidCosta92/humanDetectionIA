@@ -32,17 +32,20 @@ class Rastreador:
             #Si detecta un nuevo objeto le asignamos el ID a ese objeto
             if objeto_det is False:
                 self.centro_puntos[self.id_count] = (cx , cy) # almacena la cordenada x e y
-                objetos_id.append([x,y,w,h,self.id_count])
+                objetos_id.append([x,y,w,h,self.id_count]) # agregamos el id del nuevo objeto a la lista
                 self.id_count += 1
 
         #Limpiar lista por puntos centrales para eliminar IDS que ya no se usan
         new_center_points = {}
         for obj_bb_id in objetos_id:
-            _,_,_,object_id = obj_bb_id
+            _,_,_,_,object_id = obj_bb_id
             center = self.centro_puntos[object_id]
             new_center_points[object_id] = center
 
+        #Actualizar la lista con los id no usados que fueron eliminados
+
+        self.centro_puntos = new_center_points.copy()
+        return objetos_id
 
 
 
-# https://www.youtube.com/watch?v=dRVPONsESqw
