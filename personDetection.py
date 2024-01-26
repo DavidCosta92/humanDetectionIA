@@ -18,7 +18,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom',
 
 # Realizar videocaptura
 # para analizar video tiempo real desde camara =>
-cap = cv2.VideoCapture(0) #que camara queremos usar
+cap = cv2.VideoCapture("Test video/2.mp4") #que camara queremos usar
 # cap = cv2.VideoCapture('Test video/output.avi')
 
 # para grabar video => out = cv2.VideoWriter('output.avi', cv2.VideoWriter.fourcc(*'XVID'), 20.0, (640, 480))
